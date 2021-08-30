@@ -115,7 +115,7 @@ Sample JSON API response (v0.8.4):
 
 | JSON key | Value range | Description
 | --- | --- | --- |
-on | bool | On/Off state of the light
+on | bool or single char string "t" | On/Off state of the light.<br>"t" as input will toggle current state (Toggle since build 2105171)
 bri | 0 to 255 | Brightness of the light. If _on_ is `false`, contains last brightness when light was on (aka brightness when _on_ is set to true. Setting _bri_ to 0 is supported but it is recommended to use the range 1-255 and use `on: false` to turn off. The state response will never havethe value `0` for _bri_.
 transition | 0 to 255 | Duration of the crossfade between different colors/brightness levels. One unit is 100ms, so a value of `4` results in atransition of 400ms.
 tt | 0 to 255 | Similar to transition, but applies to just the current API call. Not included in state response.
